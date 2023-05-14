@@ -137,7 +137,7 @@ dir = /var/lib/faillock
 ### The rest
 1. Install the rest
 ```
-pacman -S git htop man-db
+pacman -S git htop man-db man-pages
 ```
 2. Edit /etc/hosts
 ```
