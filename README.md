@@ -132,9 +132,9 @@ visudo (find the line %wheel ALL=(ALL) ALL and uncomment it)
     grub-mkconfig -o /boot/grub/grub.cfg
     ```
     Grub optionals:
-    dosfstools (if I have a windows partition and need to perform maintenance)
-    os-prober (in case I have multi-boot)
-    mtools (for manipulating files on MS-DOS disks, such as floppy disks or USB drives)
+    - dosfstools (if I have a windows partition and need to perform maintenance)
+    - os-prober (in case I have multi-boot)
+    - mtools (for manipulating files on MS-DOS disks, such as floppy disks or USB drives)
     #### Case 2: MBR
     ```
     pacman -S grub
@@ -142,9 +142,9 @@ visudo (find the line %wheel ALL=(ALL) ALL and uncomment it)
     grub-mkconfig -o /boot/grub/grub.cfg
     ```
     Grub optionals:
-    dosfstools (if I have a windows partition and need to perform maintenance)
-    os-prober (in case I have multi-boot)
-    mtools (for manipulating files on MS-DOS disks, such as floppy disks or USB drives)
+    - dosfstools (if I have a windows partition and need to perform maintenance)
+    - os-prober (in case I have multi-boot)
+    - mtools (for manipulating files on MS-DOS disks, such as floppy disks or USB drives)
 17. Installation's done. Good to reboot now
 ```
 exit
@@ -159,7 +159,7 @@ nmtui
 ```
 1. Install microcode for the CPU (https://wiki.archlinux.org/title/Microcode)
 ```
-pacmans -S intel-ucode (or amd-ucode)
+pacman -S intel-ucode (or amd-ucode)
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 2. Enforce a delay of 4 seconds after a failed login attempt
@@ -175,11 +175,7 @@ dir = /var/lib/faillock
 ```
 
 ### The rest
-1. Install the rest
-```
-pacman -S git htop man-db man-pages
-```
-2. Edit /etc/hosts
+1. Edit /etc/hosts
 ```
 sudo vim /etc/hosts (add following lines)
 
@@ -192,10 +188,16 @@ sudo vim /etc/hosts (add following lines)
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ```
-3. Customize pacman (add colors)
+2. Customize pacman (add colors)
 ```
-vim /etc/pacman.com
+vim /etc/pacman.conf
 <uncomment Color>
+```
+---
+# TODO: rewrite this part
+1. Install the rest
+```
+pacman -S git htop man-db man-pages
 ```
 4. Install paru
 ```
