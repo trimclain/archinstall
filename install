@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+INSTALL="sudo pacman -S --noconfirm --needed"
+
+# TODO: Add some of commands from README so I can use this script at an earlier stage
+
+# Install man
+$INSTALL man-db man-pages
+
+# Install the X.org display server
+$INSTALL xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo xorg-xinput xorg-xev
+
+# Install the LightDM login manager
+$INSTALL lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+sudo systemctl enable lightdm
+
+# Install the audio/video processor
+$INSTALL pipewire pipewire-pulse wireplumber
