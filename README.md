@@ -190,35 +190,18 @@ ff02::2 ip6-allrouters
 ```
 2. Customize pacman (add colors)
 ```
-vim /etc/pacman.conf
+sudo vim /etc/pacman.conf
 <uncomment Color>
 ```
----
-# TODO: rewrite this part
-1. Install the rest
+3. Install essentials
 ```
-pacman -S git htop man-db man-pages
+sudo pacman -S git make openssh
 ```
-4. Install paru
-```
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
-5. Install the X.org display server
-```
-pacman -S xorg-server xorg-xinit
-```
-6. Install the LightDM login manager
-```
-pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings (this installs python aswell :D)
-systemctl enable lightdm
-```
-NOTE: Usually users start XORG either manually using xinit or via display manager (my case)
-In first case you can edit xinitrc, in second case xprofile
-
-7. Install a terminal
-```
-paru -S kitty
-```
-8. Install my configs
+4. Run `./install` to install man, xorg, lightdm and pipewire
+5. Install my configs
+    1. cd ~/.dotfiles
+    2. make
+    3. make install
+    4. chsh -s /bin/zsh
+    5. make apps
+    6. reboot
