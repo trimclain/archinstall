@@ -1,6 +1,6 @@
-# Arch Installer
+# Arch Linux Installation
 
-## My Arch Installation Process (reference for automation)
+## My Arch Installation Process
 
 1. Live boot from USB with Arch ISO and choose first install option
 2. Connect to WiFi:
