@@ -8,4 +8,6 @@
 MSG="Section \"InputClass\"\n\tIdentifier \"Touchpad\"\n\tMatchDriver \"libinput\"\n\tMatchIsTouchpad \"on\"\n\tOption \"Tapping\" \"on\"\n\tOption \"NaturalScrolling\" \"true\"\nEndSection"
 CONFIG="/etc/X11/xorg.conf.d/30-touchpad.conf"
 
-echo -e "$MSG" | sudo tee "$CONFIG" > /dev/null
+if [[ ! -f "$CONFIG" ]]; then
+    echo -e "$MSG" | sudo tee "$CONFIG" > /dev/null
+fi
