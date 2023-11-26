@@ -92,10 +92,11 @@ pacman -S networkmanager
 ```
 systemctl enable NetworkManager
 ```
-10. Set the time zone
+10. Set the time zone and enable network time synchronization
 ```
 ln -sf /usr/share/zoneinfo/<Region>/<City> /etc/localtime
 hwclock --systohc
+timedatectl set-ntp true
 ```
 11. Set Localization
 ```
