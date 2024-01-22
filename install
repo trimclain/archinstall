@@ -10,9 +10,13 @@ $INSTALL man-db man-pages
 # Install the X.org display server
 $INSTALL xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo xorg-xinput xorg-xev
 
-# Install the LightDM login manager
-$INSTALL lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
-sudo systemctl enable lightdm
+# # Install the LightDM login manager
+# $INSTALL lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+# sudo systemctl enable lightdm
+
+# Install SDDM
+$INSTALL sddm # sddm-kcm
+sudo systemctl enable sddm
 
 # Install the audio/video processor
 $INSTALL pipewire pipewire-pulse wireplumber
