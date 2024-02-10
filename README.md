@@ -15,7 +15,7 @@ ip link (should show wlan0 state as UP)
 ```
 3. Install keyring to avoid possible errors in pacstrap
 ```
-pacman -Sy archlinux-keyring
+pacman -S archlinux-keyring
 ```
 4. Partitions (check if you need GPT or MBR with `cat /sys/firmware/efi/fw_platform_size`; if file not found use MBR)
     #### Case 1: GPT
@@ -149,7 +149,7 @@ visudo (find the line %wheel ALL=(ALL) ALL and uncomment it)
 17. Installation's done. Good to reboot now
 ```
 exit
-umount -a (not sure this is necessary)
+umount -R /mnt
 shutdown now (remove usb stick and start the pc)
 ```
 ## Post-Install Tweaks
@@ -198,7 +198,7 @@ sudo vim /etc/pacman.conf
 ```
 sudo pacman -S git make openssh
 ```
-4. Run `./install` to install man, xorg, lightdm and pipewire
+4. Run `./install` to install man, xorg, sddm and pipewire
 5. Install my configs
     1. cd ~/.dotfiles
     2. make
