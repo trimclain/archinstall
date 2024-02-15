@@ -104,7 +104,7 @@ vim /etc/locale.gen (find langs and uncomment them)
 locale-gen
 vim /etc/locale.conf (and add following)
 LANG=en_US.UTF-8
-LANGUAGE=en_US:en:C:ru_RU
+LANGUAGE=en_US:en:C
 LC_TIME=de_DE.UTF-8
 ```
 12. Create a host name
