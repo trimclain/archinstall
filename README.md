@@ -194,15 +194,12 @@ ff02::2 ip6-allrouters
 sudo vim /etc/pacman.conf
 <uncomment Color>
 ```
-3. Install essentials
+3. Enable periodic `fstrim` if you have SSD (see [wiki](https://wiki.archlinux.org/title/Solid_state_drive#Periodic_TRIM))
+```
+sudo systemctl enable fstrim.timer
+```
+4. Install essentials
 ```
 sudo pacman -S git make openssh
 ```
-4. Run `./install` to install man, xorg, sddm and pipewire
-5. Install my configs
-    1. cd ~/.dotfiles
-    2. make
-    3. make install
-    4. chsh -s /bin/zsh
-    5. make apps
-    6. reboot
+5. Run `./install` to install man, xorg, sddm and pipewire
