@@ -15,6 +15,7 @@ ip link (should show wlan0 state as UP)
 ```
 3. Install keyring to avoid possible errors in pacstrap
 ```
+pacman -Sy
 pacman -S archlinux-keyring
 ```
 4. Partitions (check if you need GPT or MBR with `cat /sys/firmware/efi/fw_platform_size`; if file not found use MBR)
@@ -25,7 +26,7 @@ pacman -S archlinux-keyring
     fdisk /dev/sda (in my case it's sda)
     d (delete all previous partiotions)
     g (create new GPT table)
-    n (create new partition for efi, end at +550M)
+    n (create new partition for efi, end at +1G)
     t (change partition type to 1 - efi)
     n (create new partition for swap, end at +<RAM size>G)
     t (change partition type to 19 - swap)
